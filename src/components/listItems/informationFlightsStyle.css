@@ -1,0 +1,32 @@
+.list{
+    list-style-type: none;
+    font-family: 'Charm', cursive;
+}
+span{
+    font-weight: bold;
+    padding: 10px;
+
+}
+h1{
+    padding-top: 10px;
+    font-family: 'Charm', cursive;
+    font-weight: bold;
+}
+h4{
+    font-family: 'Charm', cursive;
+}
+li{
+    font-size:18px;
+}
+.class{
+    background-color:rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+
+}
+.error{
+    background-color:rgba(170, 2, 2, 0.5);
+    border-radius: 10px;
+    padding: 10px;
+    font-family: 'Charm', cursive;
+    font-weight: bold;
+}
