@@ -25,8 +25,6 @@ class App extends Component {
                 }
             ]
         },
-        checkStatus: false
-
     };
 
     downloadUrlFromInput = url => {
@@ -44,27 +42,12 @@ class App extends Component {
                     data: responseJson
                 });
             })
-      return this.state.data;
-    };
-
-    checkStatusRequest = () => {
-
-        console.log("error" ,this.state.data.statusCode)
-       if (this.state.data.statusCode === 200){
-           this.state.checkStatus = true;
-       }else {
-
-               this.state.checkStatus = false;
-
-       }
-
-
     };
 
     render() {
         return (
             <div className="container">
-                <EnterUrl downloadUrlFromInput={this.downloadUrlFromInput} checkStatus={this.state.checkStatus}/>
+                <EnterUrl downloadUrlFromInput={this.downloadUrlFromInput}/>
                 <div className="row heightDiv">
                     <div className="col-10 mx-auto col-lg-4 my-5">
                         <InformationFlights data={this.state.data}/>

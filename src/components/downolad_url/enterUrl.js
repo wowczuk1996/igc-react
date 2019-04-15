@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
-import './enterUrl.css'
+
 class EnterUrl extends Component {
     constructor(props) {
         super(props);
         this.state = ({
-            value: '',
-            errorMessage: 'dziala'
-
+            value: ''
         });
 
         this.handleChange = this.handleChange.bind(this);
@@ -18,21 +16,9 @@ class EnterUrl extends Component {
     }
 
     handleSubmit(event) {
-        if (this.props.downloadUrlFromInput(this.state.value).statusCode === 200){
-            this.setState({
-                errorMessage:"dziala"
-            })
-        }else {
-            this.setState({
-                errorMessage:"niedziala"
-            })
-        }
-
+        this.props.downloadUrlFromInput(this.state.value);
         event.preventDefault();
-
     }
-
-
 
     render() {
         return (
@@ -51,7 +37,6 @@ class EnterUrl extends Component {
                                    value={this.state.value}
                                    onChange={this.handleChange}
                             />
-                         <label>{this.state.errorMessage}</label>
                             <div className="col-6 mx-auto">
                                 <button type="submit"
                                         className={'btn btn-block btn-success mt-3'}>

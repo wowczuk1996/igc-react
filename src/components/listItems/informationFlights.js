@@ -25,7 +25,7 @@ class InformationFlights extends Component {
             );
         }else{
             return (
-                <div></div>
+                <div><h5 className="error">Zapytanie nie jest prawidłowe</h5></div>
             );
         }
     }
