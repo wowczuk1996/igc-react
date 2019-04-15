@@ -1,25 +1,38 @@
 import React, {Component} from 'react';
-
-class Url extends Component {
+import './enterUrl.css'
+class EnterUrl extends Component {
     constructor(props) {
         super(props);
         this.state = ({
-            value: ''
+            value: '',
+            errorMessage: 'dziala'
 
         });
+
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event) {
         this.setState({value: event.target.value});
-
     }
 
     handleSubmit(event) {
-        this.props.downloadUrlFromInput(this.state.value);
+        if (this.props.downloadUrlFromInput(this.state.value).statusCode === 200){
+            this.setState({
+                errorMessage:"dziala"
+            })
+        }else {
+            this.setState({
+                errorMessage:"niedziala"
+            })
+        }
+
         event.preventDefault();
+
     }
+
+
 
     render() {
         return (
@@ -38,6 +51,7 @@ class Url extends Component {
                                    value={this.state.value}
                                    onChange={this.handleChange}
                             />
+                         <label>{this.state.errorMessage}</label>
                             <div className="col-6 mx-auto">
                                 <button type="submit"
                                         className={'btn btn-block btn-success mt-3'}>
@@ -52,4 +66,4 @@ class Url extends Component {
     }
 }
 
-export default Url;
+export default EnterUrl;

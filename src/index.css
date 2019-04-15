@@ -6,6 +6,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background:  url("https://cdn.pixabay.com/photo/2016/03/09/09/30/paragliding-1245837_1280.jpg")  no-repeat center fixed;
+  background-size: cover;
+
+
 }
 
 code {
